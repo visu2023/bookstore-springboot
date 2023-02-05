@@ -51,7 +51,7 @@ class BookStoreCatalogControllerTest {
     }
     @Test
     void testaddABook() throws  Exception {
-        BookClientDTO b1 = new BookClientDTO("Test Book","bond0100",134.5,"test book thi sis ","ammazon.xcom",100.1,null,null);
+        BookClientDTO b1 = new BookClientDTO("Test Book","bond0101",134.5,"test book thi sis ","ammazon.xcom",100.1,null,null);
         String token = "Bearer" +" " + tokenManager.generateJwtToken("admin");
         mockMvc.perform(post("/api/bookstore/v1/book/addABook")
                         .with(csrf())
