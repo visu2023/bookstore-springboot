@@ -92,6 +92,13 @@ class ShoppingCartControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().json(expectedJson));
 
+        mockMvc.perform(get("/api/bookstore/v1/book/cart/removeFromCart")
+                        .with(csrf())
+                        .header("Authorization", token)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(asJsonString(b1)))
+                .andExpect(content().json(expectedJson));
+
         System.out.println(content());
     }
 

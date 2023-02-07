@@ -57,7 +57,7 @@ public class ShoppingCartController {
 	@PostMapping(value = "/removeFromCart")
 	public ResponseEntity<BookStoreShoppingCart> removeItemFromCart(@RequestBody BookClientDTO book) {
 		shoppingCartService.removeItemFromCart(book);
-		return buildResponseEntity("Added", HttpStatus.CREATED);
+		return buildResponseEntity("Removed", HttpStatus.CREATED);
 	}
 
 	@PostMapping(value = "/removeItemsFromCart")
