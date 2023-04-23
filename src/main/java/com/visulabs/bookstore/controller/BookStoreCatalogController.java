@@ -66,7 +66,7 @@ public class BookStoreCatalogController {
 		boolean isAdmin = authentication.getAuthorities().stream()
 				.anyMatch(grantedAuthority -> grantedAuthority.getAuthority().indexOf("ADMIN") != -1);
 		if (!isAdmin) {
-			throw new NotAuthrizedException("Add New Book");
+			throw new NotAuthrizedException("Cannot add new Book from this user. Admin role required.");
 		}
 		BookStoreUser user = (BookStoreUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		service.addPromotionForBook(promotionDTO, user.getUsername());
