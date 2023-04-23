@@ -70,7 +70,7 @@ public class OrderController {
 		BookStoreUser user = (BookStoreUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String orderNum = orderService.createOrder(order, user.getCustomerId());
 		Gson g = new Gson();
-		return ResponseEntity.ok().body(g.toJson("Order sucessfully placed " + orderNum));
+		return ResponseEntity.ok().body(g.toJson("Order sucessfully placed. Track Order in order history " + orderNum));
 
 	}
 
